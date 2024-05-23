@@ -1,27 +1,32 @@
 ---
-import Header from '../components/header/Header.astro';
+import CallToAction from '../components/cta/CallToAction.astro';
+import MainStack from '../components/mainStack/MainStack.astro';
+import Marquee from '../components/marquee/Marquee.astro'
+import SelectedProjects from '../components/selectedProjects/SelectedProjects.astro'
+import SectionTwo from '../components/sectionTwo/SectionTwo.astro'
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Gabriel Maestre | Front-End Developer" description='I develop front-end websites using React and Next.js with meticulous attention to detail. Passionate about frontend technologies and seamless user interfaces. Available for work.'>
-	<Header />
 	<main>
 		<section class="px-8 mt-12 lg:px-0 mb-12 max-w-7xl mx-auto lg:flex">
 			<div>
 				<p class="text-[80px] max-w-4xl mb-6 font-medium leading-tight tracking-[-0.07em] lg:text-[140px] lg:leading-none">I&apos;m Gabriel Maestre.</p>
 				<h1 class="tracking-tight leading-7 text-[15px] mb-6 lg:text-xl lg:leading-relaxed max-w-3xl">I develop front-end websites using React and Next.js with meticulous attention to detail. Passionate about frontend technologies and seamless user interfaces. Available for work.</h1>
 				<div class="flex justify-start items-center gap-4 mb-6">
-					<!-- <CallToActionButton /> -->
+					<CallToAction />
 					<a class="text-sm tracking-tight hover:underline" href="/projects">
 						View Projects
 					</a>
 				</div>
 			</div>
-			<!-- <div class="flex flex-col">
+			<div class="flex flex-col">
 				<SelectedProjects />
 				<MainStack />
-			</div> -->
+			</div>
 		</section>
+		<Marquee />
+		<SectionTwo />
 	</main>
 </Layout>
 

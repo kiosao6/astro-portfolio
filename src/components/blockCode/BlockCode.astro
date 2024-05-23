@@ -1,0 +1,71 @@
+---
+import { Code } from "astro:components";
+import CopyButton from "./CopyButton.astro";
+interface Props {
+  code: string;
+  filename?: string;
+  lang?: string;
+  theme?: string;
+}
+
+const { code, filename, lang = "jsx", theme } = Astro.props;
+---
+
+<div class="bg-[#1b1e28] overflow-hidden rounded-lg">
+  <div class="bg-[#262638]">
+    {
+      filename && (
+        <div class="text-[13px] flex justify-between items-center h-12 py-2 px-4 text-zinc-300">
+          {filename}
+          <CopyButton code={code} />
+        </div>
+      )
+    }
+    <Code class="shiki" code={code} lang="jsx" theme="catppuccin-mocha" />
+    <!-- <div class="[&_.highlighted]:bg-[#404053] border-t border-zinc-600" dangerouslySetInnerHTML={{ __html: html }} /> -->
+  </div>
+</div>
+
+<style>
+  .astro-code {
+    overflow-x: auto;
+    counter-reset: step;
+    counter-increment: step 0;
+    code {
+      font-family: 'GeistMono';
+      font-size: 13px;
+      display: grid;
+      padding: 1.25rem;
+      overflow: auto;
+    }
+    .line {
+      height: 20px;
+      min-width: fit-content;
+      padding-right: 1.25rem;
+      line-height: 20px;
+      &::before {
+        counter-increment: step;
+        content: counter(step);
+        margin-right: 20px;
+        display: inline-block;
+        width: 16px;
+        height: 20px;
+        border-color: transparent;
+        text-align: center;
+        color: rgb(113 113 122);
+      }
+    }
+  }
+  pre {
+    overflow-x: auto;
+    border-top-width: 1px;
+    border-color: rgb(82 82 91)
+  }
+  .astro-code > code {
+    font-family: "__GeistMono_c1e5c9";
+    font-size: 13px;
+    display: grid;
+    padding: 1.25rem;
+    overflow: auto;
+  }
+</style>

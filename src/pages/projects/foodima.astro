@@ -1,0 +1,61 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+
+---
+
+<Layout title="Foodima | Online Recipe Diary by Gabriel Maestre" description="Discover Foodima, an online recipe diary created by Gabriel Maestre. Search for recipes, use filters for better results, and enjoy a seamless user experience with this React and Tailwind CSS project, featuring GSAP animations and ShadCn components.">
+  <main class="px-8 my-12 lg:px-0 max-w-2xl mx-auto w-fit">
+    <h1 class="text-3xl max-w-xl leading-10 font-medium tracking-tighter">Foodima - Recipe diary</h1>
+    <div class="tracking-tight leading-7 text-[15px] mt-4 mb-6 space-y-4">
+      <h2>Foodima is an online recipe diary designed to provide a seamless and user-friendly experience. Users can enter a keyword in the search bar, and the application will display relevant recipes. A sidebar with filters is available to refine search results when there are too many recipes.</h2>
+      <p>Foodima uses local storage to save recipes, ensuring simplicity as no account is needed. Built with React and styled using Tailwind CSS, the project also incorporates GSAP for animations and components from Shadcn.</p>
+      <p>The main goal was to learn and implement asynchronous concepts in React by fetching recipes from an external API and displaying them dynamically.</p>
+    </div>
+
+    <Image
+      src="/projects/foodima.webp"
+      alt="Foodima Image"
+      width={1000}
+      height={1000}
+      class="rounded-lg"
+    />
+    <div class="mt-4 tracking-tight border-b pb-2">
+      <p class="text-[13px] text-zinc-500">Developed by Gabriel Maestre. Design inspiration by Cuberto.</p>
+    </div>
+    <div class="flex gap-2 justify-start items-center mt-4 text-zinc-500">
+      <a aria-label="Github Code" target="blank" class="p-2 group bg-zinc-100 rounded" href="https://github.com/kiosao6/foodima">
+        <svg class="group-hover:text-black transition-all size-5" role="img" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a aria-label="Live Project" target="blank" class="p-2 bg-zinc-100 rounded group" href="https://foodima-brown.vercel.app/">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="group-hover:text-black transition-all" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4"></path>
+          <path d="M11.5 3a16.989 16.989 0 0 0 -1.826 4"></path>
+          <path d="M12.5 3a16.989 16.989 0 0 1 1.828 4"></path>
+          <path d="M19.5 17a9 9 0 0 1 -7.5 4a8.991 8.991 0 0 1 -7.484 -4"></path>
+          <path d="M11.5 21a16.989 16.989 0 0 1 -1.826 -4"></path>
+          <path d="M12.5 21a16.989 16.989 0 0 0 1.828 -4"></path>
+          <path d="M2 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+          <path d="M17 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+          <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="mt-12 mb-6">
+      <h2 class="text-2xl font-medium tracking-tighter mb-4">Fun Aspect of Development:</h2>
+      <div class="space-y-4 tracking-tight leading-7 text-[15px]">
+        <p>The most enjoyable part of developing Foodima was working with the API. Seeing the recipes appear on the screen after successfully fetching data was incredibly satisfying. It was exciting to watch the application come to life as the data showed dynamically, improving the user experience.</p>
+      </div>
+    </div>
+
+    <div class="mt-12 mb-6">
+      <h2 class="text-2xl font-medium tracking-tighter mb-4">Challenges Faced:</h2>
+      <div class="space-y-4 tracking-tight leading-7 text-[15px]">
+        <p>The most challenging aspect was implementing the sidebar and filtering functionality. Ensuring that the filters worked correctly and efficiently required careful planning and was a bit tedious.</p>
+      </div>
+    </div>
+
+  </main>
+
+</Layout>

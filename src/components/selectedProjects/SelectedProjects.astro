@@ -1,0 +1,30 @@
+---
+const projects = [
+  {
+    name: "Hazzly - Landing page",
+    slug: "hazzly",
+  },
+  {
+    name: "Foodima - Recipe diary",
+    slug: "foodima",
+  },
+  {
+    name: "Shinning Balloons - Ecommerce website",
+    slug: "shinning-balloons",
+  },
+]
+---
+
+<div class="hidden lg:block my-12">
+  <span class="uppercase text-sm tracking-wide font-medium text-zinc-500">Selected Projects:</span>
+  <div class="tracking-tight flex flex-col">
+
+    {
+      projects.map((project) => (
+        <a class="py-4 border-b text-xl hover:border-black transition-all" href={`/projects/${project.slug}`}>
+          {project.name}
+        </a>
+      ))
+    }
+  </div>
+</div>

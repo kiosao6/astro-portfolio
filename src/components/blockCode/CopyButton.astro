@@ -1,0 +1,58 @@
+---
+import { isAnimating } from "../../store";
+import CheckIcon from "./CheckIcon.astro";
+import CopySvg from "./CopySvg.astro";
+interface Props {
+  code: string;
+}
+
+---
+
+<button
+  id="copy-button"
+  class="copy size-8 flex items-center justify-center hover:bg-[#404053] rounded transition-all relative"
+  aria-label="Copy Button"
+>
+  <CopySvg />
+  <CheckIcon />
+</button>
+
+<style>
+  .copy svg {
+    transform: translate(-50%, -50%) scale(1);
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transition:
+      opacity 300ms ease,
+      transform 300ms ease;
+  }
+
+  .copy svg[data-hide="true"] {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+</style>
+
+<script>
+  import { isAnimating } from "../../store";
+
+  const copyToClipboard = async (code: string) => {
+    try {
+      await navigator.clipboard.writeText(code);
+      isAnimating.set(true)
+      setTimeout(() => {
+        isAnimating.set(true)
+      }, 700);
+    } catch (error) {
+      console.error("Error copying to clipboard", error);
+    }
+  };
+  const button = document.getElementById("copy-button")!;
+  // button.addEventListener("click", onHandleClick);
+
+  function onHandleClick(code: string) {
+    copyToClipboard(code)
+    console.log('hola')
+  }
+</script>

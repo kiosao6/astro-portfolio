@@ -1,0 +1,20 @@
+---
+import { isAnimating } from "../../store";
+---
+
+<svg
+  class=`${isAnimating && 'hidden'} size-5 absolute`
+  data-testid="geist-icon"
+  fill="none"
+  height="24"
+  shape-rendering="geometricPrecision"
+  stroke="#D4D4D8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="1.5"
+  viewBox="0 0 24 24"
+  width="24"
+  <!-- data-hide={isAnimating} -->
+>
+  <path d="M20 6L9 17l-5-5"></path>
+</svg>
